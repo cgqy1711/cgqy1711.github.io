@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晴遠视界 Qingyuan Visualization STUDIO</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%); position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%); top: -200px; right: -200px; border-radius: 50%; }
+.hero::after { content: ""; position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%); bottom: -100px; left: -100px; border-radius: 50%; }
+.hero-content { position: relative; z-index: 1; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; background: linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #f472b6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+.hero .cta { display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff; font-size: 1.1rem; font-weight: 600; border-radius: 12px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 30px rgba(99,102,241,0.3); }
+.hero .cta:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(99,102,241,0.5); }
+
+/* Services */
+.services { padding: 100px 0; }
+.section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+.section-sub { text-align: center; color: #64748b; font-size: 1.1rem; margin-bottom: 60px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 36px 28px; transition: all 0.3s; position: relative; overflow: hidden; }
+.card:hover { border-color: #6366f1; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+.card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+.card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: #f1f5f9; }
+.card p { color: #94a3b8; font-size: 0.95rem; margin-bottom: 16px; }
+.card .price { font-size: 1.4rem; font-weight: 700; color: #a5b4fc; }
+.card .price span { font-size: 0.85rem; color: #64748b; font-weight: 400; }
+
+/* Process */
+.process { padding: 80px 0; background: #0f172a; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 48px; }
+.step { text-align: center; }
+.step .num { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; margin: 0 auto 16px; }
+.step h4 { font-size: 1.1rem; margin-bottom: 8px; color: #f1f5f9; }
+.step p { color: #64748b; font-size: 0.9rem; }
+
+/* Portfolio */
+.portfolio { padding: 100px 0; }
+.works { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+.work { aspect-ratio: 16/9; background: #1e293b; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #94a3b8; border: 1px dashed #334155; transition: all 0.3s; }
+.work:hover { border-color: #6366f1; background: #1a2332; color: #e2e8f0; }
+
+/* Contact */
+.contact { padding: 100px 0; background: linear-gradient(135deg, #0f172a, #1a1a2e); text-align: center; }
+.contact .methods { display: flex; justify-content: center; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
+.method { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 24px 32px; min-width: 200px; }
+.method .label { font-size: 0.85rem; color: #64748b; margin-bottom: 8px; }
+.method .value { font-size: 1.1rem; font-weight: 600; color: #e2e8f0; }
+
+/* Footer */
+footer { padding: 32px 0; text-align: center; color: #475569; font-size: 0.85rem; border-top: 1px solid #1f2937; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .grid { grid-template-columns: 1fr; }
+    .works { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+<div class="hero-content">
+<img src="logo.png" alt="晴遠视界" style="max-width:560px;width:80%;height:auto;margin-bottom:20px;">
+<p>室内空间 · 视频剪辑 · AI短剧 · 音乐MV · 婚礼叙事 · AI产品</p>
+<a href="#contact" class="cta">立即咨询 →</a>
+<a href="https://shop113818373.taobao.com/" target="_blank" style="display:inline-block;margin-top:16px;padding:14px 36px;background:transparent;border:1px solid #6366f1;color:#a5b4fc;font-size:1rem;font-weight:500;border-radius:12px;text-decoration:none;transition:all 0.3s;">🛒 淘宝店铺 →</a>
+</div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+<div class="container">
+<h2 class="section-title">服务内容</h2>
+<p class="section-sub">从创意到成品，一站式视觉解决方案</p>
+<div class="grid">
+<div class="card">
+<div class="icon">🏠</div>
+<h3>室内商业空间设计</h3>
+<p>店铺/办公室/展厅/餐饮空间效果图。AI 生成 + 人工精修，多风格方案对比，快速出图。</p>
+<div class="price">¥2,000 起 <span>/ 套(3方案)</span></div>
+</div>
+<div class="card">
+<div class="icon">✂️</div>
+<h3>视频剪辑</h3>
+<p>短视频/长视频/活动花絮/企业宣传片剪辑。调色、节奏、字幕、BGM 一站式完成。</p>
+<div class="price">¥800 起 <span>/ 条</span></div>
+</div>
+<div class="card">
+<div class="icon">🎭</div>
+<h3>AI 短剧</h3>
+<p>AI 生成短剧/微短剧/剧情短片。编剧+分镜+AI生成+剪辑全流程，成本低、出片快、风格多变。</p>
+<div class="price">¥3,000 起 <span>/ 集</span></div>
+</div>
+<div class="card">
+<div class="icon">🎵</div>
+<h3>音乐 MV</h3>
+<p>独立音乐人/乐队/企业定制 MV。风格定制（写实/动漫/抽象/电影感），视觉冲击力强。</p>
+<div class="price">¥3,000 起 <span>/ 条</span></div>
+</div>
+<div class="card">
+<div class="icon">💒</div>
+<h3>婚礼主角叙事片</h3>
+<p>不是流水账！以新人为主角的电影级叙事短片，讲述你们的故事。AI调色+专业剪辑+原创配乐。</p>
+<div class="price">¥2,500 起 <span>/ 条(3-5min)</span></div>
+</div>
+<div class="card">
+<div class="icon">🛒</div>
+<h3>电商详情页</h3>
+<p>淘宝/天猫/京东/拼多多 商品详情页设计，8屏完整方案，主图+卖点+场景+参数。</p>
+<div class="price">¥1,500 起 <span>/ 套</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Process -->
+<section class="process">
+<div class="container">
+<h2 class="section-title">合作流程</h2>
+<p class="section-sub">简单四步，从沟通到交付</p>
+<div class="steps">
+<div class="step">
+<div class="num">1</div>
+<h4>需求沟通</h4>
+<p>微信/电话说明需求<br>确认风格和预算</p>
+</div>
+<div class="step">
+<div class="num">2</div>
+<h4>方案确认</h4>
+<p>提供创意方向<br>确认脚本/构图</p>
+</div>
+<div class="step">
+<div class="num">3</div>
+<h4>制作交付</h4>
+<p>48h 内初稿<br>2轮修改免费</p>
+</div>
+<div class="step">
+<div class="num">4</div>
+<h4>满意结案</h4>
+<p>终稿交付<br>源文件可另议</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Portfolio -->
+<section class="portfolio">
+<div class="container">
+<h2 class="section-title">作品展示</h2>
+<p class="section-sub">更多作品请添加微信查看完整作品集</p>
+<div class="works">
+<a href="https://item.taobao.com/item.htm?id=546422131022&mi_id=0000stWdlbjqQrwV2cATKbsCLSduS4GiqCjrFDQ2FGiX6G0&spm=a21xtw.29178619.0.0&xxc=shop" target="_blank" style="text-decoration:none;"><div class="work" style="border:none;padding:0;overflow:hidden;background:#0a0a0a;"><img src="work-interior.jpg" alt="室内商业空间" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;"></div></a>
+<div class="work">🎵 音乐 MV</div>
+<div class="work">🎭 AI 短剧</div>
+<div class="work">🤖 AI 产品</div>
+<div class="work">💒 婚礼叙事片</div>
+<div class="work">🛒 电商详情页</div>
+</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+<div class="container">
+<h2 class="section-title">开始合作</h2>
+<p class="section-sub">工作日 10:00-22:00 在线，响应迅速</p>
+<div class="methods">
+<div class="method">
+<div class="label">微信</div>
+<div class="value">你的微信号</div>
+</div>
+<div class="method">
+<div class="label">淘宝</div>
+<div class="value"><a href="https://shop113818373.taobao.com/" target="_blank" style="color:#f472b6;text-decoration:none;">shop113818373.taobao.com</a></div>
+</div>
+<div class="method">
+<div class="label">小红书</div>
+<div class="value">@你的小红书</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>晴遠视界 Qingyuan Visualization STUDIO · 2026</p>
+</div>
+</footer>
+
+</body>
+</html>
