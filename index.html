@@ -45,12 +45,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC"
 .works { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
 .work { aspect-ratio: 16/9; background: #1e293b; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #94a3b8; border: 1px dashed #334155; transition: all 0.3s; position: relative; overflow: hidden; }
 .work img { transition: all 0.35s ease; }
-.work::after { content: ""; position: absolute; inset: 0; background: rgba(10,10,15,0.45); transition: opacity 0.35s ease; pointer-events: none; }
+.work::after { content: ""; position: absolute; inset: 0; background: rgba(10,10,15,0.25); transition: opacity 0.35s ease; pointer-events: none; }
 .work:hover::after { opacity: 0; }
 .work img:hover, .work:hover img { filter: none; }
 .work:hover { border-color: #6366f1; background: #1a2332; color: #e2e8f0; }
 .work:hover img { filter: brightness(1.05); }
-.work .wlabel { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); z-index: 2; font-size: 1.3rem; font-weight: 800; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.9); letter-spacing: 2px; white-space: nowrap; text-align: center; }
+.work .wlabel { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; font-size: 1.3rem; font-weight: 800; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.9); letter-spacing: 2px; white-space: nowrap; text-align: center; padding: 40px 0 16px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); }
 
 /* Contact */
 .contact { padding: 100px 0; background: linear-gradient(135deg, #0f172a, #1a1a2e); text-align: center; }
@@ -165,12 +165,12 @@ footer { padding: 32px 0; text-align: center; color: #475569; font-size: 0.85rem
 <h2 class="section-title">作品展示</h2>
 <p class="section-sub">更多作品请添加微信查看完整作品集</p>
 <div class="works">
-<a href="https://item.taobao.com/item.htm?id=546422131022&mi_id=0000stWdlbjqQrwV2cATKbsCLSduS4GiqCjrFDQ2FGiX6G0&spm=a21xtw.29178619.0.0&xxc=shop" target="_blank" style="text-decoration:none;"><div class="work" style="border:none;padding:0;overflow:hidden;background:#0a0a0a;"><span class="wlabel">室内商业空间</span><img src="work-interior.jpg" alt="室内商业空间" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;filter:brightness(0.55);transition:filter 0.35s ease;"></div></a>
+<a href="https://item.taobao.com/item.htm?id=546422131022&amp;mi_id=0000stWdlbjqQrwV2cATKbsCLSduS4GiqCjrFDQ2FGiX6G0&amp;spm=a21xtw.29178619.0.0&amp;xxc=shop" target="_blank" style="text-decoration:none;display:block;"><div class="work" style="border:none;padding:0;overflow:hidden;background:#0a0a0a;"><span class="wlabel">室内商业空间</span><img src="work-interior.jpg" alt="室内商业空间" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:12px;filter:brightness(0.55);transition:filter 0.35s ease;"></div></a>
 <div class="work" style="border:none;padding:0;overflow:hidden;background:#0a0a0a;"><span class="wlabel">音乐 MV</span><img src="work-mv.jpg" alt="音乐MV" style="width:100%;height:100%;object-fit:cover;border-radius:12px;filter:brightness(0.55);transition:filter 0.35s ease;"></div>
-<div class="work"><span class="wlabel">AI 短剧</span>🎭 AI 短剧</div>
-<div class="work"><span class="wlabel">AI 产品</span>🤖 AI 产品</div>
-<div class="work"><span class="wlabel">婚礼叙事片</span>💒 婚礼叙事片</div>
-<div class="work"><span class="wlabel">电商详情页</span>🛒 电商详情页</div>
+<div class="work" style="border:none;padding:0;overflow:hidden;background:linear-gradient(135deg,#1a1a2e,#16213e);"><span class="wlabel">AI 短剧</span><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.3;font-size:4rem;">🎭</div></div>
+<div class="work" style="border:none;padding:0;overflow:hidden;background:linear-gradient(135deg,#0f2027,#203a43);"><span class="wlabel">AI 产品</span><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.3;font-size:4rem;">🤖</div></div>
+<div class="work" style="border:none;padding:0;overflow:hidden;background:linear-gradient(135deg,#2d1b69,#11998e);"><span class="wlabel">婚礼叙事片</span><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.3;font-size:4rem;">💒</div></div>
+<div class="work" style="border:none;padding:0;overflow:hidden;background:linear-gradient(135deg,#1f1c2c,#928dab);"><span class="wlabel">电商详情页</span><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0.3;font-size:4rem;">🛒</div></div>
 </div>
 </div>
 </section>
